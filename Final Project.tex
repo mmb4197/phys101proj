@@ -1,0 +1,247 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsfonts,latexsym,amsthm,amssymb,amsmath,amscd,euscript, enumitem}
+\usepackage{framed}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{physics}
+\usepackage{tikz-cd}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{chemfig}
+\usepackage{textgreek}
+\usepackage{siunitx}
+
+\usepackage{pst-node}
+\DeclarePairedDelimiter{\inp}{\langle}{\rangle}
+\DeclareMathOperator\id{id}
+    \hypersetup{colorlinks=true,citecolor=blue,urlcolor =black,linkbordercolor={1 0 0}}
+
+\newenvironment{statement}[1]{\smallskip\noindent\color[rgb]{1.00,0.00,0.50} {\bf #1.}}{}
+\allowdisplaybreaks[1]
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem*{proposition}{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{postulate}[theorem]{Postulate}
+\theoremstyle{definition}
+\newtheorem{defn}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{notation}{Notation}
+\newtheorem*{note}{Note}
+
+% You can define new commands to make your life easier.
+\newcommand{\BR}{\mathbb R}
+\newcommand{\BC}{\mathbb C}
+\newcommand{\BF}{\mathbb F}
+\newcommand{\BQ}{\mathbb Q}
+\newcommand{\BZ}{\mathbb Z}
+\newcommand{\BN}{\mathbb N}
+\newcommand\invisiblesection[1]{%
+  \refstepcounter{section}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
+  \sectionmark{#1}}
+\newcommand{\nc}{\newcommand}
+
+
+\nc{\on}{\operatorname}
+\nc{\Spec}{\on{Spec}}
+\nc{\im}{\on{im}}
+\nc{\End}{\on{End}}
+\nc{\Pf}{\on{Pf}}
+\nc{\Real}{\on{Re}}
+\nc{\Imag}{\on{Im}}
+
+\title{Physics 101, Final Project \\ \Large Geodesic Motion of Objects in General Relativity, the Newtonian Limit, and Gravitational Time Dilation
+} 
+\date{\today}
+\author{Forrest Flesher, Natalia Pacheco-Tallaj, Martin Bernstein }
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduction}
+Hello, this is the section that contains useless wordy information that makes our project look longer and more professional.  (I also added fancy sounding section titles ooooh)  Probably should say something about the notion of geodesics in general - distances on spheres, differential geometry, the original notion of geodesy on earth, etc.  Should also mention something about how the word ``geodesic" comes from ancient Greek ``\textgamma \texteta " and ``\textdelta \textiota \textalpha \textiota \textrho \textepsilon \textomega "  meaning ``earth" and ``divide" respectively.  
+
+\section{The Geodesic Equation}
+
+In this section, we use the fact that 
+\[
+\frac{d^2 x^{ \prime \mu}}{d \lambda^2} = 0
+\]
+to show that in an arbitrary set of coordinates $x^{\mu}(\lambda)$, we have that in a vanishingly small spacetime region, the trajectory of the particle satisfies the \textit{geodesic equation}, which can be defined as
+\[
+\frac{ d^2 x^{ \mu } }{d \lambda^2 } = 
+- \Gamma^{ \mu }_{ \nu \rho } 
+\frac{d x^{\nu} }{ d \lambda } 
+\frac{ d x^{ \rho } }{d \lambda} . 
+\]
+Here, the $\Gamma^{\mu}_{\nu \rho}$ are the \textit{Christoffel coefficients}, which can be defined as 
+\[
+\Gamma_{ \nu \rho }^{ \mu } \equiv 
+\frac{ \partial x^{ \mu } }{ \partial x^{ \prime \sigma } }
+\frac{ \partial^2 x^{ \prime \sigma } }{ \partial x^{ \nu } \partial x^{ \rho } }.
+\]
+To derive this geodesic equation, we begin by noting that, by the chain rule, we have
+\[
+\frac{ d x^{ \prime \mu } }{ d \lambda } = 
+\frac{  \partial x^{ \prime \mu} }{ \partial x^{ \rho } } 
+\frac{ d x^{ \rho } }{ d \lambda }.
+\]
+Now, we can differentiate with respect to $\lambda$, and use the chain rule once again, to obtain 
+\[
+\frac{ d^2 x^{ \prime \mu } }{ d \lambda^2 } = 
+\frac{ \partial x^{ \prime \mu } }{ \partial x^{ \rho } } 
+\frac{ d^2 x^{ \rho } }{ d \lambda^2 }
++ 
+\frac{ \partial^2 x^{ \prime \mu } }{\partial x^{ \rho } \partial x^{ \nu } }
+\frac{ \partial x^{ \nu } }{ \partial \lambda }
+\frac{ \partial x^{ \rho } }{\partial \lambda } .
+\]
+But this must be equal to zero, so that we have 
+\[
+\frac{ \partial x^{ \prime \mu } }{ \partial x^{ \rho } } 
+\frac{ d^2 x^{ \rho } }{ d \lambda^2 } 
+=
+-
+\frac{ \partial^2 x^{ \prime \mu } }{\partial x^{ \rho } \partial x^{ \nu } }
+\frac{ \partial x^{ \nu } }{ \partial \lambda }
+\frac{ \partial x^{ \rho } }{\partial \lambda }.
+\]
+This almost gives us our desired geodesic equation.  To finish the derivation, we can multiply both sides of the above equation by the partial derivative
+\[
+\frac{ \partial x^{ \mu } }{ \partial x^{ \prime \mu } }
+\]
+to obtain
+\[
+\frac{ \partial x^{ \mu } }{ \partial x^{ \prime \mu } }
+\frac{ \partial x^{ \prime \mu } }{ \partial x^{ \rho } } 
+\frac{ d^2 x^{ \rho } }{ d \lambda^2 } \
+=
+-
+\frac{ \partial x^{ \mu } }{ \partial x^{ \prime \mu } }
+\frac{ \partial^2 x^{ \prime \mu } }{\partial x^{ \rho } \partial x^{ \nu } }
+\frac{ \partial x^{ \nu } }{ \partial \lambda }
+\frac{ \partial x^{ \rho } }{\partial \lambda }.
+\]
+By the chain rule (and by noting that the derivative of $x^{ \rho}$ is a total derivative), the left hand side of this above equation simplifies to 
+\[
+\frac{ \partial^2 x^{ \mu } }{ \partial \lambda^2 }.
+\]
+Thus, we have that 
+\[
+\frac{ \partial^2 x^{ \mu } }{ \partial \lambda^2 }
+= 
+-
+\left( 
+\frac{ \partial x^{ \mu } }{ \partial x^{ \prime \mu } }
+\frac{ \partial^2 x^{ \prime \mu } }{\partial x^{ \rho } \partial x^{ \nu } }
+\right)
+\frac{ \partial x^{ \nu } }{ \partial \lambda }
+\frac{ \partial x^{ \rho } }{\partial \lambda }
+=
+-
+\Gamma^{\mu}_{\rho \nu} 
+\frac{ \partial x^{ \nu } }{ \partial \lambda }
+\frac{ \partial x^{ \rho } }{\partial \lambda }.
+\]
+Thus, we see that in an arbitrary set of coordinates, the particle's trajectory satisfies the geodesic equation, as desired.  
+
+
+
+
+\section{Symmetry in the Christoffel Coefficients}
+
+In order to justify calculations made later, we note that the Christoffel coefficients, as defined above, are symmetric on their lower coordinate indices.  That is, we have that 
+\[
+\Gamma^{ \mu }_{ \nu \rho } 
+= 
+\Gamma^{ \mu }_{ \rho \nu }.
+\]
+This is a consequence of Schwarz theorem in analysis, which asserts equality of mixed partials.  This gives us that 
+\[
+\frac{ \partial^2 x^{ \prime \sigma } }{ \partial x^{ \nu }  \partial x^{ \rho } } 
+=
+\frac{ \partial^2 x^{ \prime \sigma } }{ \partial x^{ \rho }  \partial x^{ \nu } },
+\]
+which clearly implies that 
+\[
+\Gamma_{ \rho \nu }^{ \mu } = \Gamma_{ \nu \rho }^{ \mu } 
+\]
+
+
+
+
+\section{The Minkowski Metric Tensor}
+
+\section{Alternate Formula for the Christoffel Coefficients}
+
+\section{The Newtonian Limit}
+
+\section{Gravitational Fields and Time Dilation}
+
+\section{An Application to Spherically Symmetric Objects}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%endendendendendendendend
+
+
+
+
+
+
+
+\end{document}

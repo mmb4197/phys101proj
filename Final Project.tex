@@ -176,13 +176,88 @@ This is a consequence of Schwarz theorem in analysis, which asserts equality of 
 \]
 which clearly implies that 
 \[
-\Gamma_{ \rho \nu }^{ \mu } = \Gamma_{ \nu \rho }^{ \mu } 
+\Gamma_{ \rho \nu }^{ \mu } = \Gamma_{ \nu \rho }^{ \mu } .
 \]
 
 
 
 
-\section{The Minkowski Metric Tensor}
+\section{Symmetry of The Metric Tensor}
+
+Consider the metric tensor defined as 
+\[
+g_{ \rho \sigma } =
+\frac{ \partial x^{ \prime \mu } }{ \partial x^{ \rho } } 
+\frac{ \partial x^{ \prime \nu } }{ \partial x^{ \sigma } } 
+\eta_{ \mu \nu } .
+\]
+Here, $\eta_{\mu \nu}$ is the Minkowski metric tensor, defined as
+\[
+\eta_{\mu \nu} 
+\equiv
+\begin{cases}
+-1 & \text{for} \,\, \mu = \nu = 0 \\
+2 & \text{for} \,\, \mu = \nu = 1,2,3 \\
+0 & \text{for} \,\, \mu \neq \nu
+\end{cases}.
+\]
+Thus, if $\mu \neq \nu$, we have that
+\[
+g_{ \mu \nu}
+ =  
+\frac{ \partial x^{ \prime \mu } }{ \partial x^{ \mu } } 
+\frac{ \partial x^{ \prime \nu } }{ \partial x^{ \nu } } 
+\eta_{ \mu \nu } 
+=
+0
+=
+\frac{ \partial x^{ \prime \mu } }{ \partial x^{ \nu } } 
+\frac{ \partial x^{ \prime \nu } }{ \partial x^{ \mu } } 
+\eta_{ \nu \mu } 
+=
+g_{\nu \mu}.
+\]
+If $\mu = \nu$, then we have that 
+\[
+g_{\mu \nu} 
+=
+\frac{ \partial x^{ \prime \mu } }{ \partial x^{ \mu } } 
+\frac{ \partial x^{ \prime \nu } }{ \partial x^{ \nu } } 
+\eta_{ \mu \nu } 
+=
+\frac{ \partial x^{ \prime \mu } }{ \partial x^{ \mu } } 
+\frac{ \partial x^{ \prime \mu } }{ \partial x^{ \mu } } 
+\eta_{ \mu \mu }
+=
+\frac{ \partial x^{ \prime \mu } }{ \partial x^{ \nu } } 
+\frac{ \partial x^{ \prime \nu } }{ \partial x^{ \mu } } 
+\eta_{ \nu \mu } 
+=
+g_{ \nu \mu} .
+\]
+Now, the inverse metric tensor $g^{\mu \nu}$ is defined by the condition 
+\[
+g^{ \mu \rho } g_{ \rho \nu } 
+= 
+g_{ \nu \rho } g^{ \rho \mu } 
+= 
+\delta_{ \nu }^{ \mu } .
+\]
+Again, if $\mu \neq nu$, then 
+\[
+g^{ \mu \nu } = g^{ \nu \mu } = 0.
+\]
+If $\mu = \nu$, then we have that in the expression 
+\[
+g^{ \mu \nu} g_{ \mu \nu } 
+=
+g_{\nu \mu } g^{ \nu \mu },
+\]
+then the terms $g_{\mu \nu}$ and $g_{\nu \mu}$ cancel, since they are equal as shown above, which gives us that 
+\[
+g^{ \mu \nu } = g^{ \nu \mu },
+\]
+as desired.  
 
 \section{Alternate Formula for the Christoffel Coefficients}
 

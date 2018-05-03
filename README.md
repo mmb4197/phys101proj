@@ -1,2 +1,2 @@
 # phys101proj
-hello
+This is our final project on geodesic motion

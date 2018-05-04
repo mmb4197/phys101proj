@@ -243,7 +243,7 @@ g_{ \nu \rho } g^{ \rho \mu }
 = 
 \delta_{ \nu }^{ \mu } .
 \]
-Again, if $\mu \neq nu$, then 
+Again, if $\mu \neq \nu$, then 
 \[
 g^{ \mu \nu } = g^{ \nu \mu } = 0.
 \]
@@ -260,6 +260,233 @@ g^{ \mu \nu } = g^{ \nu \mu },
 as desired.  
 
 \section{Alternate Formula for the Christoffel Coefficients}
+
+Now, we introduce the notation $\partial_{\mu}$, which is defined as 
+\[
+\partial_{\mu} \equiv \left( \frac{1}{c} \frac{ \partial }{  \partial t } , \frac{ \partial }{ \partial x} , \frac{ \partial }{ \partial y }, \frac{ \partial }{ \partial z } \right)_{\mu} .
+\]
+Using this notation, we now demonstrate that 
+\[
+\partial_{\rho} g_{\rho \nu} = \Gamma^{ \sigma }_{ \rho \mu } g_{ \sigma \nu } + \Gamma^{ \sigma }_{ \rho \nu } g_{ \mu \sigma } .
+\]
+To do this, first consider 
+\[
+\partial_{\rho} 
+\left( \frac{ \partial x^{ \prime \alpha } }{ \partial x^{ \mu } } 
+\frac{ \partial x^{ \prime \beta } }{ \partial x^{ \mu } } 
+\eta_{ \alpha \beta } \right).
+\]
+We define $m$ to be 
+\[
+m \equiv 
+\begin{cases} 
+\dfrac{1}{c} ,& w = t \\
+1 ,& w = x,y,z \\
+\end{cases}
+\]
+Using the product rule, this is
+\[
+m \frac{ \partial^2 x^{ \prime \alpha } }{ \partial x^{ \mu } \partial x^{ \rho } } 
+\frac{ \partial x^{ \prime \beta } }{ \partial x^{ \nu } }
+\eta_{ \alpha \beta }
++
+m \frac{ \partial x^{ \prime \alpha } }{ \partial x^{ \mu } } 
+\frac{ \partial^2 x^{ \prime \beta } }{ \partial x^{ \nu } \partial x^{ \rho } } \eta_{ \alpha \beta }
+\]
+Now, note that
+\[
+\partial_{ \rho } \left( \frac{ \partial x^{ \prime \alpha } }{ \partial x^{ \mu } } \right)
+\frac{ \partial x^{ \prime \beta } }{ \partial x^{ \nu } } \eta_{\alpha \beta } 
+\]
+is equal to
+\[
+\left( m \frac{ \partial^2 x^{ \prime \alpha } }{ \partial x^{ \mu } \partial x^{ \rho } } \right) \frac{ \partial x^{ \prime \beta } }{ \partial x^{ \nu } } \eta_{ \alpha \beta }.
+\]
+Finally, we also have that
+\[
+\partial_{ \rho } 
+\left( \frac{ \partial x^{ \prime \beta } }{ \partial x^{ \nu } }  \right)
+\frac{ \partial x^{ \prime \alpha } }{ \partial x^{ \mu } } \eta_{ \alpha \beta} 
+\]
+is equal to 
+\[
+\left( m \frac{ \partial^2 x^{ \prime \beta } }{ \partial x^{ \nu } \partial x^{ \rho } } \right) \frac{ \partial x^{ \prime \alpha } }{ \partial x^{ \mu } } \eta_{ \alpha \beta}
+\]
+From this, we see that the following formula holds:
+\[
+\partial_{\rho} 
+\left( \frac{ \partial x^{ \prime \alpha } }{ \partial x^{ \mu } } 
+\frac{ \partial x^{ \prime \beta } }{ \partial x^{ \mu } } 
+\eta_{ \alpha \beta } \right)
+-
+\partial_{ \rho }
+\left( \frac{ \partial x^{ \prime \alpha } }{ \partial x^{ \mu } } \right) 
+\frac{ \partial x^{ \prime \beta } }{ \partial x^{ \nu } } 
+\eta_{ \alpha \beta }
+-
+\partial_{ \rho } 
+\left( \frac{ \partial x^{ \prime \beta } }{ \partial x^{ \nu } } \right) 
+\frac{ \partial x^{ \prime \alpha } }{ \partial x^{ \mu } } \eta_{\alpha \beta } 
+=
+0
+\]
+Now, let $\alpha = \mu$, and $\beta = \nu$.  Then we have 
+\[
+\frac{1}{m} \partial_{\rho} 
+\left( \frac{ \partial x^{ \prime \alpha } }{ \partial x^{ \mu } } 
+\frac{ \partial x^{ \prime \beta } }{ \partial x^{ \mu } } 
+\eta_{ \alpha \beta } \right)
+=
+\frac{ 1}{m} \partial_{\rho} 
+\left( \frac{ \partial x^{ \prime \mu } }{ \partial x^{ \mu } } 
+\frac{ \partial x^{ \prime \nu } }{ \partial x^{ \mu } } 
+\eta_{ \mu \nu } \right)
+=
+\partial_{ \rho } g_{ \mu \nu }
+\]
+Now, we have that 
+\[
+\partial_{ \rho } \left( \frac{ \partial x^{ \prime \mu } }{ \partial x^{ \mu }} \right)
+\frac{ \partial x^{ \prime \nu } }{ \partial x^{ \nu } } \eta_{ \mu \nu } 
+=
+m \frac{ \partial^2 x^{ \prime \mu } }{ \partial x^{ \mu } \partial x^{ \rho } } \frac{ \partial x^{ \prime \nu } }{ \partial x^{ \nu } } \eta_{ \mu \nu } 
+\]
+and 
+\[
+\partial_{ \rho } \left( \frac{ \partial x^{ \prime \mu } }{ \partial x^{ \nu } } \right) 
+\frac{ \partial x^{ \prime \nu } }{ \partial x^{ \mu } } \eta_{ \mu \nu } 
+= 
+ m \frac{ \partial^2 x^{ \prime \nu } }{ \partial x^{ \nu } \partial x^{ \rho } } 
+ \frac{ \partial x^{ \prime \mu } }{ \partial x^{ \mu } } \eta_{ \mu \nu } 
+\]
+But also, note that 
+\begin{align*}
+\Gamma^{ \sigma }_{ \rho \mu } &= \frac{ \partial x^{ \sigma } }{ \partial x^{ \prime \nu } } \frac{ \partial^{2} x^{ \prime \nu } }{ \partial x^{ \rho } \partial x^{ \mu } } \\
+g_{ \sigma \nu } &= \frac{ \partial x^{ \prime \mu } }{ \partial x^{ \sigma }} 
+\frac{ \partial x^{ \prime \nu } }{ \partial x^{ \nu } } \eta_{ \mu \nu } \\
+\Gamma^{ \sigma }_{ \rho \nu } &= \frac{ \partial x^{ \sigma } }{ \partial x^{ \prime \mu } } \frac{ \partial^2 x^{ \prime \mu } }{ \partial x^{ \rho } \partial x^{ \nu } } \\
+g_{ \mu \sigma } &= \frac{ \partial x^{ \prime \mu } }{ \partial x^{ \mu } } \frac{ \partial x^{ \prime \nu } }{ \partial x^{ \sigma } } \eta_{ \mu \nu }
+\end{align*}
+Then we have that 
+\begin{align*}
+\Gamma_{\rho \mu }^{ \sigma } g_{ \sigma \nu } 
+&= 
+\frac{ \partial x^{ \sigma } }{ \partial x^{ \prime \nu } } 
+\frac{ \partial^2 x^{ \prime \mu } }{ \partial x^{ \rho } \partial x^{ \mu } } 
+\frac{ \partial x^{ \prime \mu }}{ \partial x^{ \sigma } } 
+\frac{ \partial x^{ \prime \nu } }{ \partial x^{ \nu } } \eta_{ \mu \nu } \\
+\Gamma_{ \rho \nu }^{ \sigma } g_{ \mu \sigma } 
+&= 
+\frac{ \partial x^{ \sigma } }{ \partial x^{ \prime \mu } } 
+\frac{ \partial^2 x^{ \prime \nu } }{ \partial x^{ \rho }  \partial ^{ \nu } } 
+\frac{ \partial^{ x^{ \prime \mu } } }{ \partial x^{ \mu } } 
+\frac{ \partial x^{ \prime \nu } }{ \partial x^{\sigma } } \eta_{ \mu \nu } 
+\end{align*}
+Now, note that by the chain rule, we have that 
+\[
+\frac{ \partial x^{ \prime \mu } }{ \partial x^{ \sigma } } 
+\frac{ \partial x^{ \sigma } }{ \partial x^{ \prime \nu } } 
+=
+\frac{ \partial x^{ \sigma } }{ \partial x^{ \prime nu } } 
+\frac{ \partial x^{ \prime \mu } }{ \partial x^{ \sigma } }
+=
+\delta_{\nu}^{ \mu }.
+\]
+Thus, noting that we don't need the Kronecker delta here, since the $g_{ \mu \nu }$ are already zero for $\mu \neq \nu$, we can simplify our formulas above:
+\begin{align*}
+\Gamma_{\rho \mu }^{ \sigma } g_{ \sigma \nu } &= 
+\frac{ \partial^2 x^{ \prime \mu } }{ \partial x^{ \rho } \partial x^{ \mu } } 
+\frac{ \partial x^{ \prime \nu } }{ \partial x^{ \nu } } \eta_{ \mu \nu } \\
+\Gamma_{ \rho \nu }^{ \sigma } g_{ \mu \sigma } 
+&= 
+\frac{ \partial^2 x^{ \prime \nu } }{ \partial x^{ \rho }  \partial ^{ \nu } } 
+\frac{ \partial x^{ \prime \mu } }{ \partial x^{ \mu } }  \eta_{ \mu \nu } 
+\end{align*}
+
+But now we see that these are equal to 
+\[
+\frac{ 1}{m} \partial_{ \rho } \left( \frac{ \partial x^{ \prime \mu } }{ \partial x^{ \mu } } \right) \frac{ \partial x^{ \prime \nu } }{ \partial x^{ \nu } } \eta_{ \mu \nu }
+\]
+and 
+\[
+\frac{ 1}{ m} \partial_{ \rho } \left( \frac{ \partial x^{ \prime \nu } }{ \partial x^{ \nu } } \right) \frac{ \partial x^{ \prime \mu } }{ \partial x^{ \mu }  } \eta_{ \mu \nu } 
+\]
+from above. Now, by our equation 
+\[
+\partial_{\rho} 
+\left( \frac{ \partial x^{ \prime \alpha } }{ \partial x^{ \mu } } 
+\frac{ \partial x^{ \prime \beta } }{ \partial x^{ \mu } } 
+\eta_{ \alpha \beta } \right)
+-
+\partial_{ \rho }
+\left( \frac{ \partial x^{ \prime \alpha } }{ \partial x^{ \mu } } \right) 
+\frac{ \partial x^{ \prime \beta } }{ \partial x^{ \nu } } 
+\eta_{ \alpha \beta }
+-
+\partial_{ \rho } 
+\left( \frac{ \partial x^{ \prime \beta } }{ \partial x^{ \nu } } \right) 
+\frac{ \partial x^{ \prime \alpha } }{ \partial x^{ \mu } } \eta_{\alpha \beta } 
+=
+0, 
+\]
+we see that the $m$ terms cancel, so that by the equalities shown above, we have that 
+\[
+\partial_{ \rho } g_{ \mu \nu } = \Gamma_{ \rho \mu }^{ \sigma } g_{ \sigma \nu } + \Gamma_{ \rho \nu }^{ \sigma } g_{ \mu \sigma } ,
+\]
+as desired.  \\
+
+Now, note that from the above expression 
+\[
+\partial_{ \rho } g_{ \mu \nu } = \Gamma_{ \rho \mu }^{ \sigma } g_{ \sigma \nu } + \Gamma_{ \rho \nu }^{ \sigma } g_{ \mu \sigma } 
+\]
+we obtain the following formulas by plugging in $(\rho, \sigma) = (\mu, \rho), (\rho, \sigma) = (\nu, \rho)$, and $(\rho, \sigma) = (\sigma, \rho)$ respectively:
+\begin{align*}
+\partial_{\mu} g_{ \nu \sigma } 
+&= 
+\Gamma^{\rho}_{ \mu \nu } g_{ \rho \sigma } 
++
+\Gamma^{ \rho}_{ \mu \sigma } g_{ \nu \rho } 
+\\
+\partial_{ \nu } g_{ \mu \sigma } 
+&=
+\Gamma^{ \rho }_{ \nu \mu } g_{ \rho \sigma } 
++
+\Gamma^{ \rho }_{ \nu \sigma } g_{ \mu \rho } 
+\\
+\partial_{ \sigma } g_{ \mu \nu } 
+&=
+\Gamma^{ \rho }_{ \sigma \mu } g_{\rho \nu } 
++
+\Gamma^{ \rho }_{ \sigma \nu } g_{ \mu \rho } 
+\end{align*}
+Using these equations, and the symmetry of the Christoffel coefficients and metric tensors, we have that 
+\begin{align*}
+\frac{1}{2} g^{ \rho \sigma } &\left( \partial_{ \mu } g_{ \nu \sigma } + \partial_{ \nu } g_{ \mu \sigma } - \partial_{ \sigma } g_{ \mu \nu } \right) = \\
+& \frac{ 1}{2} g^{ \rho \sigma } \Big( \Gamma^{\rho}_{ \mu \nu } g_{ \rho \sigma } 
++
+\Gamma^{ \rho}_{ \mu \sigma } g_{ \nu \rho } 
++ 
+\Gamma^{ \rho }_{ \nu \mu } g_{ \rho \sigma } 
++
+\Gamma^{ \rho }_{ \nu \sigma } g_{ \mu \rho } 
+-
+\left( \Gamma^{ \rho }_{ \sigma \mu } g_{\rho \nu } 
++
+\Gamma^{ \rho }_{ \sigma \nu } g_{ \mu \rho } 
+\right) \Big) \\
+&= \frac{1}{2} \left( \Gamma^{ \rho }_{ \mu \nu } g_{ \rho \sigma } + \Gamma^{ \rho }_{ \nu \mu } g_{ \rho \sigma } \right)  \\
+&=  \Gamma^{ \rho }_{ \mu \nu }.
+\end{align*}
+Thus, gives us a formula for the Christoffel coefficients in terms of the metric tensor and its inverse, with no reference to locally intertial coordinates:
+\[
+\Gamma_{ \mu \nu }^{ \rho } = \frac{1}{2} \left( \partial_{ \mu } g_{ \nu \sigma } + \partial_{ \nu } g_{ \mu \sigma } - \partial_{ \sigma } g_{ \mu \nu } \right) 
+\]
+
+
+
+
+
+
 
 \section{The Newtonian Limit}
 

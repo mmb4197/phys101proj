@@ -487,13 +487,38 @@ Thus, gives us a formula for the Christoffel coefficients in terms of the metric
 
 
 
-
 \section{The Newtonian Limit}
 
 \section{Gravitational Fields and Time Dilation}
 
-\section{An Application to Spherically Symmetric Objects}
+When switching from a locally inertial reference frame to a general reference frame, the spacetime interval changes according to (see the hint)
+\begin{equation}
+ds^2=-c^2d\tau^2=g_{\mu\nu}dx^{\mu}dx^{\nu}
+\end{equation}
+Where we sum over the $\mu$ and $\nu$ from $0$ to $3$. Thus:
+\begin{equation}
+-c^2d\tau^2=g_{00}dx^0dx^0+g_{01}dx^0dx^1+g_{02}...
+\end{equation}
+Because we are dealing with an object at rest, $dx=dx^1$, $dy=dx^2$, and $dz=dx^3$ are all $0$. Thus in this sum, everything after the first term will be zero, and our equation becomes
+\begin{equation}
+-c^2d\tau^2=g_{00}dx^0dx^0
+\end{equation}
+$dx^0=d(ct)$, so $-c^2d\tau^2=g_{00}d(ct)^2=c^2g_{00}dt^2$, because $c$ is a constant. Thus:
+\begin{equation}
+d\tau^2=-g_{00}dt^2\rightarrow d\tau=\sqrt{-g_{00}}dt
+\end{equation}
+From part $e$, we see that this is equivalent to $\sqrt{1+\frac{2\Phi}{c^2}}dt$. $\Phi$ is negative (given by $-GM/r$), and grows more negative the closer an object is to the source of the gravitational field. Thus the square root is less than one, and so $d\tau<dt$, and $d\tau$ shrinks the closer an object is to the source of the gravitational field.
 
+\section{An Application to Black Holes}
+Let's consider a case where the source of the gravitational field is a spherically symmetric object of mass $M$; then Newtonian gravitational potential for objects outside of the source is given by:
+\begin{equation}
+\Phi(r)=-\frac{GM}{r}
+\end{equation}
+If we consider further a $really$ small source of a gravitational potential, with radius $R$ less than $2GM/c^2$ (recall that $G$ is a small constant, and $c$ is a very large one), and consider an observer falling towards this source. As the observer approaches the radial distance away from the object's center, i.e. $r\rightarrow 2GM/c^2$, then note that
+\begin{equation}
+d\tau=\sqrt{1+2\Phi/c^2}dt=\sqrt{1+2\frac{-GM}{rc^2}}dt\rightarrow\sqrt{1-\frac{2GM}{\frac{2GM}{c^2}c^2}}dt=\sqrt{1-1}dt=0
+\end{equation}
+That is, the change in object's proper time goes to 0. Thus as an observer approaches the object, their time slows down to the point of stopping. A clock at their location will cease moving. What is this object? An incredibly small source of a gravitational field: a black hole. 
 
 
 
